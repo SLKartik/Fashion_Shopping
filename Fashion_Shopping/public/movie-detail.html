@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="futureTv">
+
+<head>
+
+    <!-- meta tags -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>Fashionista</title>
+
+    <!-- stylesheets -->
+    <link href="assets/css/animation.css" rel="stylesheet" />
+    <!-- <link href="assets/css/videogular.css" rel="stylesheet" /> -->
+    <link href="dist/style.css" rel="stylesheet" />
+
+    <!-- scripts -->
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-animate.min.js"></script>
+    <script src="libs/angular-sanitize.min.js"></script>
+    <script src="libs/videogular.js"></script>
+    <script src="libs/vg-controls.js"></script>
+    <script src="libs/vg-overlay-play.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/ui-bootstrap-tpls-0.14.3.js"></script>
+
+    <script src="dist/allscripts.js"></script>
+
+</head>
+
+<body class="contents">
+
+     <div class="content-row">
+          <div class="header">
+               <a class="header-text bounce">
+                    <img src="assets/images/logo.png" width="100px">
+                    <br/>
+                    <span class="header-letter-spacing"><strong>experience the fashion</strong></span>
+                    <br/>
+                    <h1 class="header-letter-spacing">FASHIONISTA</h1>
+
+                    <div class="a-row" style="font-size:22px;color: #f79535;padding: 10px 0;">
+                         "Get the fashion with the real apperance on video streaming"
+                    </div>
+               </a>
+          </div>
+          <div class="header-text" style="color: #fff; padding:10px;float:left;width:100%;">
+
+               <div style="width: auto;height:auto;float:left; margin-right: 15px;">
+                    <a class="button" href="http://localhost:3000/"><img src="assets/images/back.png" width="32px"></a>
+               </div>
+               <div style="width: auto;height:auto;float:left; margin-right: 15px;">
+                    <h3 class="color-white header-letter-spacing">VIDEO: SHOPPING @ EASE</h3>
+                    <div class="header-line"> </div>
+               </div>
+
+          </div>
+     </div>
+
+     <div class="content-row">
+          <!-- <div class="header-text" style="color: #fff; padding:40px 10px 10px 10px;float:left;width:100%;">
+               <h3 class="color-white header-letter-spacing">FASHION MOVIE ONE</h3>
+               <div class="header-line"> </div>
+          </div> -->
+
+          <div style="width:100%;color: #fff;padding: 10px;float:left;">
+               <div class="a-row">
+                    A film genre is a motion picture category based on similarities in either the narrative elements or the emotional response to the film.
+               </div>
+          </div>
+     </div>
+
+     <div class="content-row">
+
+
+
+     </div>
+
+     <div class="content-row">
+
+          <script type="text/javascript" language="javascript" src="http://api.ivotek.com/v1.5/ivotek.js"></script>
+
+          <script type="text/javascript">
+
+               function onIvotekInitialized() {
+
+                    var invokePlayer = new IvotekPlayer({
+                         id : 319,
+                         displayOutlineOnHover: true,
+                         loop: true,
+                         pauseOnVideoClick: true,
+                         dynamicLabel: 'all',
+                         canChangeResolution: true,
+                         outlineColor: 'rgba(247, 149, 53, 0.7)',
+                         onClick: function(objectName) {
+                              alert(objectName + ' is clicked!');
+                              var urlToOpen;
+
+                              switch (objectName.toLowerCase().trim()) {
+                                   case 'pullover':
+                                        urlToOpen = 'https://www.amazon.in/Cotton-Company-Fleece-Pullover-Hoodie003_Navy_M/dp/B078SDZ9YZ?tag=googinhydr18418-21&tag=googinkenshoo-21&ascsubtag=6a949281-7971-4ec7-a8da-cc7e39ac56cf';
+                                        break;
+                                   case 'clock':
+                                        urlToOpen = 'https://www.amazon.in/Ajanta-oreva-small-designer-office/dp/B071YYN6XM/ref=sr_1_10?s=kitchen&ie=UTF8&qid=1523348649&sr=1-10&keywords=brown+small+clock';
+                                        break;
+                                   case 'headset':
+                                        urlToOpen = 'https://www.amazon.in/Motorola-Pulse-Max-Wired-Headset/dp/B01LZ42I25/ref=sr_1_9?s=electronics&ie=UTF8&qid=1523446628&sr=1-9&keywords=headset+black';
+                                        break;
+                                   default:
+                              }
+
+                              window.open(urlToOpen);
+                              // var popupWindow = document.getElementById('popup-window');
+                              // popupWindow.classList.remove("popup-hide");
+                              // var dynamicHTML =   'Men\'s Cotton Sweatshirt <br/>'
+                              //                     + 'Suggested price: Rs. 3,699.00'
+                              //                     + 'Price: Rs. 1,849.00 & FREE Returns'
+                              //                     + 'You Save: Rs. 1,850.00 (50%)'
+                              //                     + 'Inclusive of all taxes'
+                              //
+                              // window.alert(dynamicHTML);
+                         }
+
+                    }).start();
+
+               }
+
+          </script>
+
+     </div>
+
+</body>
+</html>

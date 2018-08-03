@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="futureTv">
+
+<head>
+
+    <!-- meta tags -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>Ericsson Tv</title>
+
+    <!-- stylesheets -->
+    <link href="assets/css/animation.css" rel="stylesheet" />
+    <link href="assets/css/videogular.css" rel="stylesheet" />
+    <link href="dist/style.css" rel="stylesheet" />
+    <link href="assets/css/techsmith-smart-player.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Actor|Source+Sans+Pro:900|Lato:400,700,900|Oswald:400,700|Abel:400|Dosis:600" rel="stylesheet">
+
+    <!-- scripts -->
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-animate.min.js"></script>
+    <script src="libs/angular-sanitize.min.js"></script>
+    <script src="libs/videogular.js"></script>
+    <script src="libs/vg-controls.js"></script>
+    <script src="libs/vg-overlay-play.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="libs/ngStorage.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/config_xml.js"></script>
+    <script src="libs/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="libs/voice.js"></script>
+    <script src="libs/face.js"></script>
+
+
+
+    <script src="dist/allscripts.js"></script>
+
+
+</head>
+
+<body ng-controller="mainController" class="animated">
+
+    <section id="content">
+        <div ng-view>
+        </div>
+    </section>
+
+</body>
+</html>

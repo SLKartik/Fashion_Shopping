@@ -1,0 +1,172 @@
+<div class="voice-overlay" ng-class="isCameraLayer ? 'voice-overlay':'popup-hide'">
+
+	<div class="our-container">
+
+		<div class="voice-data-contents">
+
+			<div class="header">
+				<div class="logo">
+					<img src="assets/images/logo.png" />
+				</div>
+				<div class="close-popup">
+					<img src="assets/images/close.png" ng-click="closeCamera()" />
+				</div>
+			</div>
+
+			<div class="voice-bar">
+				<div class="listening-bg">
+					<img src="assets/images/camera.png" />
+				</div>
+			</div>
+
+			<div class="camera-bar-popup">
+				<div class="webcam">
+					<video autoplay="true" id="video"></video>
+			          <canvas style="display: none;"  id="myCanvas" width="300" height="220"></canvas>
+					<div class="user-validation">
+    						{{userName}}
+					</div>
+			     </div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="our-container">
+
+	<div class="movie-details-data-contents">
+
+		<div class="header">
+			<div class="logo">
+				<img src="assets/images/logo.png" />
+			</div>
+			<div class="menus">
+				<a class="header-link selected">Home</a>
+				<a class="header-link">On Tv</a>
+				<a class="header-link">Guide</a>
+				<a class="header-link">On Demand</a>
+				<a class="header-link">Subscriptions</a>
+				<a class="header-link">Settings</a>
+			</div>
+			<div class="logout">
+				<img src="assets/images/logout.png" ng-click="goToLogin()" />
+			</div>
+		</div>
+
+		<div class="voice-bar">
+			<div class="voice-bg">
+				<img src="assets/images/mic.png" ng-click="showVoiceLayer()" />
+			</div>
+		</div>
+
+		<div class="video-detail-poster" ng-style="{'background-image':'url(../assets/images/{{movie.bannerUrl}})', 'background-position': 'top center', 'background-size': 'cover'}">
+			<div class="back-button">
+				<div class="back" ng-click="goToDashboard()"><img class="back-img" src="assets/images/back-pink.png">
+					<span class="back-text">
+					BACK
+				</span>
+				</div>
+			</div>
+
+			<div class="details-header">
+				{{movie.name}} ({{movie.year}})
+			</div>
+
+			<div class="common-row genre">
+				{{movie.genre}}
+			</div>
+			<div class="common-row time-duration">
+				{{movie.duration}}
+			</div>
+			<div class="common-row">
+				<div class="detailed-movieline">
+					<div class="timeframe-filled" style="float:left;" ng-style="{width: movie.watched}">
+						&nbsp;
+					</div>
+				</div>
+			</div>
+			<div class="common-row">
+				<div class="margin-top-play">
+					<button class="play-button" ng-click="showCamera()">Play</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="detail-left">
+			<div class="common-row">
+				<div class="detail-left-button">
+					Add to Wishlist
+				</div>
+			</div>
+
+			<div class="common-row">
+				<div class="detail-left-button">
+					Watch Trailer
+				</div>
+			</div>
+		</div>
+
+		<div class="detail-right">
+
+			<div class="overview">
+				OVERVIEW
+			</div>
+			<div class="movie-description">
+				<div class="line-1">
+					{{movie.description}}
+				</div>
+			</div>
+
+			<div class="group">
+
+				<div class="group-header" ng-if="movie.genre === 'Shopping'">
+					SHOPPING PRODUCTS
+				</div>
+
+				<div class="group-header" ng-if="movie.genre !== 'Shopping'">
+					CAST & CREW
+				</div>
+
+				<div class="crew" ng-repeat="actor in movie.actors" ng-style="{'background-image':'url(../assets/images/{{actor.image}})', 'background-position': 'top center', 'background-size': 'cover'}">
+					<div class="crew-tile-header">
+						{{actor.name}}
+					</div>
+				</div>
+
+			</div>
+
+			<div class="common-row" style="margin-top: 30px;" ng-repeat="item in completeData">
+				<div id="style-3" class="group" ng-repeat="group in item.groups | filter:group.name='YOU MIGHT ALSO LIKE'">
+					<div class="group-header">
+						{{group.name}}
+					</div>
+
+					<div id="tslshow" class="tile-strip">
+
+						<div class="popular-videos" ng-style="{'background-image':'url(../assets/images/{{movie.tileUrl}})', 'background-position': 'top center', 'background-size': 'cover'}" ng-click="goToMovieDetails(movie)" ng-repeat="movie in group.movies">
+							<div class="sub-tile-header">
+								<div class="tile-header-container">
+									<span class="sub-tile-info">{{movie.name}}</span>
+									<div class="timeframe">{{movie.duration}}</div>
+								</div>
+							</div>
+							<div class="movieline">
+								<div class="timeframe-filled" style="float:left;" ng-style="{width: movie.watched}">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="copyright">
+			© 2018 Ericsson AB 1994-2018
+		</div>
+
+	</div>
+
+</div>

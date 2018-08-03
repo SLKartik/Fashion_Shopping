@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="futureTv">
+
+<head>
+
+     <!-- meta tags -->
+     <meta http-equiv="content-type" content="text/html; charset=UTF8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- title -->
+     <title>Ericsson Tv</title>
+
+     <!-- stylesheets -->
+     <link href="assets/css/animation.css" rel="stylesheet" />
+     <link href="assets/css/videogular.css" rel="stylesheet" />
+     <link href="dist/style.css" rel="stylesheet" />
+
+     <!-- scripts -->
+     <script src="libs/angular.min.js"></script>
+     <script src="libs/angular-animate.min.js"></script>
+     <script src="libs/angular-sanitize.min.js"></script>
+     <script src="libs/videogular.js"></script>
+     <script src="libs/vg-controls.js"></script>
+     <script src="libs/vg-overlay-play.js"></script>
+     <script src="libs/angular-route.min.js"></script>
+     <script src="libs/ngStorage.js"></script>
+     <script src="libs/jquery.min.js"></script>
+     <script src="libs/ui-bootstrap-tpls-0.14.3.js"></script>
+     <script src="libs/voice.js"></script>
+     <script src="libs/face.js"></script>
+
+     <script src="dist/allscripts.js"></script>
+
+    <style>
+     .contents {
+          width: 852px;
+          height: auto;
+          margin: 0 auto;
+     }
+     .content-row {
+          width: 100%;
+          height: auto;
+          float: left;
+     }
+     .button {
+          width: auto;
+          height: auto;
+          float: left;
+          text-align: center;
+          color: #000;
+          font-weight: 700;
+          padding: 0 15px 0 0;
+     }
+
+     .vertical-line {
+          transform: rotate(120deg);
+     }
+    </style>
+
+    <script type="text/javascript" language="javascript"
+	src="http://api.ivotek.com/v1.5/ivotek.js"></script>
+<!-- <script type="text/javascript">
+	function onIvotekInitialized(){
+		new IvotekPlayer({id : 318}).start();
+	}
+</script> -->
+
+
+
+
+</head>
+
+<body>
+
+
+     <div class="our-container">
+     	<div class="data-contents">
+               <div class="header">
+          		<div class="logo">
+          			<img src="assets/images/logo.png" />
+          		</div>
+          		<div class="menus">
+          			<a class="header-link selected">Home</a>
+          			<a class="header-link">On Tv</a>
+          			<a class="header-link">Guide</a>
+          			<a class="header-link">On Demand</a>
+          			<a class="header-link">Subscriptions</a>
+          			<a class="header-link">Settings</a>
+          		</div>
+          		<div class="logout">
+          			<img src="assets/images/logout.png" />
+          		</div>
+               </div>
+               <div class="voice-bar">
+          		<div class="voice-bg">
+          			<img src="assets/images/mic.png" ng-click="showVoiceLayer()" />
+          		</div>
+               </div>
+
+               <style>
+                    .video-detail-poster {
+                         width: calc(1240px - 40px);
+                         height: 408px;
+                         float: left;
+                         padding: 20px;
+                         background: #ccc;
+                         background: url(../assets/images/video-banner.jpg) !important
+                    }
+                    .back {
+                         padding: 5px;
+                         color: #ff5f8c;
+                         text-decoration: none;
+                         font-size: 16px;
+                    }
+                    .back-img {
+                         width: auto;
+                         float: left;
+                         margin: 2px;
+                    }
+                    .back-button {
+                         width: auto;
+                         float: left;
+                    }
+                    .back-text {
+                         width: auto;
+                         float: left;
+                         margin: 1px 0 0 5px;
+                    }
+               </style>
+               <div class="video-detail-poster">
+                    <div class="back-button">
+                         <a class="back" href="http://localhost:3000/"><img class="back-img" src="assets/images/back-pink.png">
+                              <span class="back-text">
+                                   BACK
+                              </span>
+                         </a>
+                    </div>
+                    &nbsp;
+               </div>
+               <script type="text/javascript">
+
+                    function onIvotekInitialized() {
+
+                         var invokePlayer = new IvotekPlayer({
+                              id : 318,
+                              displayOutlineOnHover: true,
+                              loop: true,
+                              pauseOnVideoClick: true,
+                              dynamicLabel: 'all',
+                              canChangeResolution: true,
+                              outlineColor: 'rgba(247, 149, 53, 0.7)',
+                              onClick: function(objectName) {
+                                   alert(objectName + ' is clicked!');
+                                   var urlToOpen;
+
+                                   switch (objectName.toLowerCase().trim()) {
+                                        case 'pullover':
+                                             urlToOpen = 'https://www.amazon.in/Cotton-Company-Fleece-Pullover-Hoodie003_Navy_M/dp/B078SDZ9YZ?tag=googinhydr18418-21&tag=googinkenshoo-21&ascsubtag=6a949281-7971-4ec7-a8da-cc7e39ac56cf';
+                                             break;
+                                        case 'clock':
+                                             urlToOpen = 'https://www.amazon.in/Ajanta-oreva-small-designer-office/dp/B071YYN6XM/ref=sr_1_10?s=kitchen&ie=UTF8&qid=1523348649&sr=1-10&keywords=brown+small+clock';
+                                             break;
+                                        case 'headset':
+                                             urlToOpen = 'https://www.amazon.in/Motorola-Pulse-Max-Wired-Headset/dp/B01LZ42I25/ref=sr_1_9?s=electronics&ie=UTF8&qid=1523446628&sr=1-9&keywords=headset+black';
+                                             break;
+                                        default:
+                                   }
+
+                                   window.open(urlToOpen);
+                              }
+
+                         }).start();
+
+                    }
+
+               </script>
+          </div>
+     </div>
+
+     <div class="content-row">
+
+
+
+     </div>
+
+</body>
+</html>

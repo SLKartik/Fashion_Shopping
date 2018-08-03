@@ -1,0 +1,13 @@
+{
+     "projects": [
+          { "id": 'blockbhain', "navigate": 'blockchain', "title": 'BlockChain', "subtitle": 'digital ledger' },
+          { "id": 'cartographer', "navigate": 'cartographer', "title": 'Cartographer', "subtitle": 'visual crawler' },
+          { "id": 'nui', "navigate": 'nui', "title": 'Natural UI', "subtitle": 'natural behavior' },
+          { "id": 'hmi', "navigate": 'hmi', "title": 'Human MI', "subtitle": 'capability presentation' },
+          { "id": 'gloconnect', "navigate": 'gloconnect', "title": 'Glo Connect', "subtitle": 'employee &amp; manager' },
+          { "id": 'nghat', "navigate": 'nghat', "title": 'ng-hat', "subtitle": 'control gallery' },
+          { "id": 'enjoymore', "navigate": 'enjoymore', "title": 'Enjoymore', "subtitle": 'ui representation' },
+          { "id": 'glbengaluru', "navigate": 'glblr', "title": 'GL - Bengaluru', "subtitle": 'web representation' },
+          { "id": 'contactus', "navigate": 'contact', "title": 'Contact us', "subtitle": 'stay connected' }
+     ]
+}
